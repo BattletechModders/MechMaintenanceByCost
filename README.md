@@ -8,6 +8,7 @@ BattleTech mod (using BTML) that changes your maintenance cost of your mechs fro
 
 ## Features
 - Your monthly mech cost now depend on the chassis.
+- This makes Light mechs more attractive and Assault mechs more hard to sustain.
 
 ## Download
 
