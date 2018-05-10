@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Harmony;
+using System.Reflection;
 
 namespace MechMaintenanceByCost
 {
     public class MechMaintenanceByCost
     {
+        public static void Init() {
+            var harmony = HarmonyInstance.Create("de.morphyum.MechMaintenanceByCost");
+            harmony.PatchAll(Assembly.GetExecutingAssembly());
+        }
+
+
     }
 }
