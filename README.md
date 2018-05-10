@@ -7,7 +7,7 @@ BattleTech mod (using BTML) that changes your maintenance cost of your mechs, fr
 * install [BattleTechModLoader](https://github.com/Mpstark/BattleTechModLoader/releases) using the [instructions here](https://github.com/Mpstark/BattleTechModLoader)
 
 ## Features
-- Your Monthly mech cost now depend on the chassis.
+- Your monthly mech cost now depend on the chassis.
 
 ## Download
 
