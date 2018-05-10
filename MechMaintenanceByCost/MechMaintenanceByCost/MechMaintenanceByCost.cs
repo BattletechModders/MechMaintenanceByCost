@@ -9,7 +9,5 @@ namespace MechMaintenanceByCost
             var harmony = HarmonyInstance.Create("de.morphyum.MechMaintenanceByCost");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
-
-
-    }
+    } 
 }

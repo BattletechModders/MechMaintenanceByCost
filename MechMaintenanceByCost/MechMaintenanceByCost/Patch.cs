@@ -3,7 +3,6 @@ using BattleTech.UI;
 using Harmony;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +13,9 @@ namespace MechMaintenanceByCost {
         static void Postfix(SGCaptainsQuartersStatusScreen __instance) {
             try {
                 ReflectionHelper.InvokePrivateMethode(__instance, "ClearListLineItems",new object[] { ReflectionHelper.GetPrivateField(__instance, "SectionOneExpensesList") });
-   
+
+                Settings settings = Helper.LoadSettings();
+
                 SimGameState simState = (SimGameState)ReflectionHelper.GetPrivateField(__instance, "simState");
                 float expenditureCostModifier = simState.GetExpenditureCostModifier(simState.ExpenditureLevel);
                 List<KeyValuePair<string, int>> list = new List<KeyValuePair<string, int>>();
@@ -31,7 +32,7 @@ namespace MechMaintenanceByCost {
                 }
                 foreach (MechDef mechDef in simState.ActiveMechs.Values) {
                     key = mechDef.Name;
-                    value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Description.Cost * 0.003f);
+                    value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Description.Cost * settings.PercentageOfMechCost);
                     list.Add(new KeyValuePair<string, int>(key, value));
                 }
                 list.Sort((KeyValuePair<string, int> a, KeyValuePair<string, int> b) => b.Value.CompareTo(a.Value));
@@ -54,9 +55,11 @@ namespace MechMaintenanceByCost {
 
         static void Postfix(ref SimGameState __instance, ref int __result) {
             try {
+                Settings settings = Helper.LoadSettings();
+
                 foreach (MechDef mechDef in __instance.ActiveMechs.Values) {
                     __result -= __instance.Constants.Finances.MechCostPerQuarter;
-                    __result += Mathf.RoundToInt((float)mechDef.Description.Cost * 0.003f);
+                    __result += Mathf.RoundToInt((float)mechDef.Description.Cost * settings.PercentageOfMechCost);
                 }
             }              
             catch (Exception e) {
