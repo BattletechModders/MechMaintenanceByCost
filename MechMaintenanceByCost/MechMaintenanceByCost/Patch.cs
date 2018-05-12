@@ -32,7 +32,14 @@ namespace MechMaintenanceByCost {
                 }
                 foreach (MechDef mechDef in simState.ActiveMechs.Values) {
                     key = mechDef.Name;
-                    value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Description.Cost * settings.PercentageOfMechCost);
+                    if (settings.CostByTons) {
+                        value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Chassis.Tonnage * settings.cbillsPerTon);
+                    }
+                    else {
+                        value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Description.Cost * settings.PercentageOfMechCost);
+                    }
+                    
+
                     list.Add(new KeyValuePair<string, int>(key, value));
                 }
                 list.Sort((KeyValuePair<string, int> a, KeyValuePair<string, int> b) => b.Value.CompareTo(a.Value));
@@ -59,7 +66,12 @@ namespace MechMaintenanceByCost {
 
                 foreach (MechDef mechDef in __instance.ActiveMechs.Values) {
                     __result -= __instance.Constants.Finances.MechCostPerQuarter;
-                    __result += Mathf.RoundToInt((float)mechDef.Description.Cost * settings.PercentageOfMechCost);
+                    if (settings.CostByTons) {
+                        __result += Mathf.RoundToInt((float)mechDef.Chassis.Tonnage * settings.cbillsPerTon);
+                    } else {
+                        __result += Mathf.RoundToInt((float)mechDef.Description.Cost * settings.PercentageOfMechCost);
+                    }
+                   
                 }
             }              
             catch (Exception e) {
