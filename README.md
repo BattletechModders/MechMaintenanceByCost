@@ -18,6 +18,8 @@ Downloads can be found on [github](https://github.com/Morphyum/MechMaintenanceBy
 Setting | Type | Default | Description
 --- | --- | --- | ---
 PercentageOfMechCost | float | default 0.003 | The percentage of the chassis cost you have to pay monthly. 1 = 100% / 0 = 0%
+CostByTons | bool | default false | set this to true if you want tonnage to be the factor to determine the drop costs.
+cbillsPerTon | int | default 500 | if CostByTons is true, this sets the cost per ton.
     
 ## Install
 - After installing BTML, put  everything into \BATTLETECH\Mods\ folder.
