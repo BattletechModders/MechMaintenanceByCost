@@ -1,0 +1,12 @@
+{
+    "Name": "MechMaintenanceByCost",
+    "Enabled": true,
+
+    "Version": "v1.0",
+    "Description": "Changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.",
+    "Author": "Morphyum",
+    "Website": "https://github.com/Morphyum/MechMaintenanceByCost",
+    "Contact": "",
+	
+	"DLL": "MechMaintenanceByCost.dll",
+}
