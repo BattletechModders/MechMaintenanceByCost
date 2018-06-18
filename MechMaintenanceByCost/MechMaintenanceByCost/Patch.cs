@@ -36,7 +36,7 @@ namespace MechMaintenanceByCost {
                         value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Chassis.Tonnage * settings.cbillsPerTon);
                     }
                     else {
-                        value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Description.Cost * settings.PercentageOfMechCost);
+                        value = Mathf.RoundToInt(expenditureCostModifier * Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost);
                     }
                     
 
@@ -69,9 +69,8 @@ namespace MechMaintenanceByCost {
                     if (settings.CostByTons) {
                         __result += Mathf.RoundToInt((float)mechDef.Chassis.Tonnage * settings.cbillsPerTon);
                     } else {
-                        __result += Mathf.RoundToInt((float)mechDef.Description.Cost * settings.PercentageOfMechCost);
-                    }
-                   
+                        __result += Mathf.RoundToInt(Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost);
+                    }               
                 }
             }              
             catch (Exception e) {
