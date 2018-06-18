@@ -9,7 +9,7 @@ namespace MechMaintenanceByCost {
 
         public static Settings LoadSettings() {
             try {
-                using (StreamReader r = new StreamReader("mods/MechMaintenanceByCost/settings.json")) {
+                using (StreamReader r = new StreamReader($"{MechMaintenanceByCost.ModDirectory}/settings.json")) {
                     string json = r.ReadToEnd();
                     return JsonConvert.DeserializeObject<Settings>(json);
                 }
