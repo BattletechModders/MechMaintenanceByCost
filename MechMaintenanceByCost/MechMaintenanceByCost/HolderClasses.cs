@@ -4,5 +4,6 @@
 
         public bool CostByTons = false;
         public int cbillsPerTon = 500;
+        public bool TonsAdditive = false;
     }
 }

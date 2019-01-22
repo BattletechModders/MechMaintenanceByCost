@@ -34,11 +34,13 @@ namespace MechMaintenanceByCost {
                     key = mechDef.Name;
                     if (settings.CostByTons) {
                         value = Mathf.RoundToInt(expenditureCostModifier * (float)mechDef.Chassis.Tonnage * settings.cbillsPerTon);
+                        if(settings.TonsAdditive) {
+                            value += Mathf.RoundToInt(expenditureCostModifier * Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost);
+                        }
                     }
                     else {
                         value = Mathf.RoundToInt(expenditureCostModifier * Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost);
                     }
-                    
 
                     list.Add(new KeyValuePair<string, int>(key, value));
                 }
@@ -63,13 +65,16 @@ namespace MechMaintenanceByCost {
         static void Postfix(ref SimGameState __instance, ref int __result) {
             try {
                 Settings settings = Helper.LoadSettings();
-
+                float expenditureCostModifier = __instance.GetExpenditureCostModifier(__instance.ExpenditureLevel);
                 foreach (MechDef mechDef in __instance.ActiveMechs.Values) {
-                    __result -= __instance.Constants.Finances.MechCostPerQuarter;
+                    __result -= Mathf.CeilToInt(__instance.Constants.Finances.MechCostPerQuarter * expenditureCostModifier);
                     if (settings.CostByTons) {
-                        __result += Mathf.RoundToInt((float)mechDef.Chassis.Tonnage * settings.cbillsPerTon);
+                        __result += Mathf.RoundToInt((float)mechDef.Chassis.Tonnage * settings.cbillsPerTon * expenditureCostModifier);
+                        if (settings.TonsAdditive) {
+                            __result += Mathf.RoundToInt(Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost * expenditureCostModifier);
+                        }
                     } else {
-                        __result += Mathf.RoundToInt(Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost);
+                        __result += Mathf.RoundToInt(Helper.CalculateCBillValue(mechDef) * settings.PercentageOfMechCost * expenditureCostModifier);
                     }               
                 }
             }              
