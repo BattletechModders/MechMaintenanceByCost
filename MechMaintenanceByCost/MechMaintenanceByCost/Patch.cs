@@ -60,6 +60,7 @@ namespace MechMaintenanceByCost {
     }
 
     [HarmonyPatch(typeof(SimGameState), "GetExpenditures")]
+    [HarmonyPatch(new Type[] { typeof(EconomyScale), typeof(bool) })]
     public static class SimGameState_GetExpenditures {
 
         static void Postfix(ref SimGameState __instance, ref int __result) {
