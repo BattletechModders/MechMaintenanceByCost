@@ -1,5 +1,5 @@
 # MechMaintenanceByCost
-BattleTech mod (using BTML) that changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.
+BattleTech mod that changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.
 
 ## Requirements
 * Install [Modtek](https://github.com/BattletechModders/ModTek/releases) using the [instructions here](https://github.com/BattletechModders/ModTek)
