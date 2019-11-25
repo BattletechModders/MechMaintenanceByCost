@@ -15,7 +15,7 @@ Downloads can be found on [github](https://github.com/BattletechModders/MechMain
 ## Settings
 Setting | Type | Default | Description
 --- | --- | --- | ---
-PercentageOfMechCost | float | default 0.003 | The percentage of the chassis cost you have to pay monthly. 1 = 100% / 0 = 0%
+PercentageOfMechCost | float | default 0.0015 | The percentage of the chassis cost you have to pay monthly. 1 = 100% / 0 = 0%
 CostByTons | bool | default false | set this to true if you want tonnage to be the factor to determine the drop costs.
 cbillsPerTon | int | default 500 | if CostByTons is true, this sets the cost per ton.
 TonsAdditive | bool | default false | If both tons flags are true adds the tons value to the normal calculated value.
