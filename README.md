@@ -18,6 +18,8 @@ cbillsPerTon | int | default 500 | if CostByTons is true, this sets the cost per
 TonsAdditive | bool | default false | If both tons flags are true adds the tons value to the normal calculated value.
     
 ## Install
-- After installing Modtek, put  everything into \BATTLETECH\Mods\ folder.
+- Unzip to Documents\My Games\BattleTech\mods\HBS.
 - If you want a different percentage set it in the settings.json.
 - Start the game.
+- Open the mod manager (lower left corner)
+- Enable in mod list
