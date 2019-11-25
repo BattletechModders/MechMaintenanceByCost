@@ -1,12 +1,10 @@
 {
     "Name": "MechMaintenanceByCost",
-    "Enabled": true,
+    "DLL": "MechMaintenanceByCost.dll",
 
-    "Version": "v1.0",
+    "Version": "v1.2.0",
     "Description": "Changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.",
-    "Author": "Morphyum",
-    "Website": "https://github.com/Morphyum/MechMaintenanceByCost",
-    "Contact": "",
-	
-	"DLL": "MechMaintenanceByCost.dll",
+    "Author": "Morphyum & sqparadox",
+    "Website": "https://github.com/sqparadox/MechMaintenanceByCost",
+    "Contact": ""
 }
