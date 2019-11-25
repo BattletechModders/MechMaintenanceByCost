@@ -1,16 +1,13 @@
 # MechMaintenanceByCost
 BattleTech mod that changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.
 
-## Requirements
-* Install [Modtek](https://github.com/BattletechModders/ModTek/releases) using the [instructions here](https://github.com/BattletechModders/ModTek)
-
 ## Features
 - Your monthly mech cost now depend on the chassis.
 - This makes Light mechs more attractive and Assault mechs more hard to sustain.
 
 ## Download
 
-Downloads can be found on [github](https://github.com/BattletechModders/MechMaintenanceByCost/releases).
+Downloads can be found on [github](https://github.com/sqparadox/MechMaintenanceByCost/releases).
 
 ## Settings
 Setting | Type | Default | Description
