@@ -1,10 +1,19 @@
 {
     "Name": "MechMaintenanceByCost",
-    "DLL": "MechMaintenanceByCost.dll",
-
-    "Version": "v1.2.0",
+    "Enabled": true,
+    "Version": "v1.3.0",
     "Description": "Changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.",
     "Author": "Morphyum & sqparadox",
     "Website": "https://github.com/sqparadox/MechMaintenanceByCost",
-    "Contact": ""
+	
+	"ConflictsWith": [ "MechAffinity" ],
+
+    "DLL": "MechMaintenanceByCost.dll",
+	
+		"Settings": {
+		"PercentageOfMechCost" : 0.0015,
+		"CostByTons" : false,
+		"cbillsPerTon" : 500,
+		"TonsAdditive": false
+	}
 }
