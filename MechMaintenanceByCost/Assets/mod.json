@@ -1,13 +1,11 @@
 {
     "Name": "MechMaintenanceByCost",
     "Enabled": true,
-    "Version": "v1.3.0",
+    "Version": "v1.4.0",
     "Description": "Changes your maintenance cost of your mechs from a flat sum for all mechs, to a cost, specific to the cost of the mech chassis.",
     "Author": "Morphyum & sqparadox",
     "Website": "https://github.com/sqparadox/MechMaintenanceByCost",
 	
-	"ConflictsWith": [ "MechAffinity" ],
-
     "DLL": "MechMaintenanceByCost.dll",
 	
 		"Settings": {
